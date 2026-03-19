@@ -19,18 +19,18 @@ try:
 except:
     print("Something went wrong")
 
-**Issues:**
+## Issues:
 
-* Catches all exceptions without specificity
-* Makes debugging difficult
-* Provides unclear error messages
+Catches all exceptions without specificity
+Makes debugging difficult
+Provides unclear error messages
 
 
 ### 2. No Logging Mechanism
 
-* Errors were only printed to the console
-* No record of system failures
-* Difficult to trace issues later
+Errors were only printed to the console
+No record of system failures
+Difficult to trace issues later
 
 
 ##  Improvements Made
@@ -43,11 +43,11 @@ try:
 except ValueError:
     print("Invalid input. Please enter a valid number.")
 
-**Benefits:**
+## Benefits:
 
-* Handles only relevant errors
-* Improves clarity for users
-* Makes debugging easier
+Handles only relevant errors
+Improves clarity for users
+Makes debugging easier
 
 
 ### 2. Advanced Exception Handling
@@ -58,10 +58,10 @@ try:
 except ZeroDivisionError as e:
     print("Cannot divide by zero")
 
-**Benefits:**
+## Benefits:
 
-* Prevents application crash
-* Handles edge cases effectively
+Prevents application crash
+Handles edge cases effectively
 
 ##  Logging Implementation
 
@@ -82,19 +82,18 @@ except ValueError as e:
     logging.error("Invalid input provided", exc_info=True)
 
 ###  Advantages of Logging:
-
-* Maintains error history in `app.log`
-* Helps in debugging and monitoring
-* Provides detailed traceback information
+Maintains error history in `app.log`
+Helps in debugging and monitoring
+Provides detailed traceback information
 
 
 ## AI vs Human Reasoning
 
 ### AI-Generated Suggestions
 
-* Use try-except blocks
-* Replace print statements with logging
-* Handle common exceptions like ValueError
+Use try-except blocks
+Replace print statements with logging
+Handle common exceptions like ValueError
 
 ### Human Reasoning and Decisions
 
@@ -105,15 +104,17 @@ except ValueError as e:
 
 ## Key Learning Outcomes
 
-* Importance of proper error handling in software development
-* Difference between generic and specific exceptions
-* Practical use of Python logging module
-* Writing maintainable and debuggable code
+ Importance of proper error handling in software development
+ Difference between generic and specific exceptions
+ Practical use of Python logging module
+ Writing maintainable and debuggable code
 
 
 ## Conclusion
 
-This project demonstrated how poor error handling can reduce software reliability. By implementing structured exception handling and logging, the application became more robust, user-friendly, and easier to debug. The comparison between AI suggestions and human reasoning highlighted the importance of thoughtful decision-making in programming.
+This project demonstrated how poor error handling can reduce software reliability. By implementing structured exception handling and logging,
+the application became more robust, user-friendly, and easier to debug.
+The comparison between AI suggestions and human reasoning highlighted the importance of thoughtful decision-making in programming.
 
 
 ## References
