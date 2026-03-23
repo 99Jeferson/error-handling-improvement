@@ -134,6 +134,7 @@ except requests.exceptions.ConnectionError as exc:
     raise NetworkError(f"Cannot reach {url!r}") from exc  # chain!
 
 ### 3.4 Before / After Comparison Summary
+##
 
 | Anti-pattern | Problem | Fix Applied |
 |---|---|---|
@@ -158,6 +159,7 @@ Python's built-in `logging` module provides five severity levels. Good logging g
 | `CRITICAL` | System cannot continue | Auth credentials missing |
 
 ### 4.2 Sample Code with Meaningful Logging Added
+##
 
 ```python
 # api_client.py — full example with meaningful logging
