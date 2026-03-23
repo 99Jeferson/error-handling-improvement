@@ -330,22 +330,22 @@ def send_request(url: str, timeout: int = 10, retries: int = 3) -> dict:
 
 ### 5.4 Discussion
 
-**Where AI excels:** AI-generated logging is remarkably fast, syntactically correct, and immediately usable for simple request/response cycles. It applies standard Python idioms (module-level logger, `%`-formatting for lazy evaluation) without prompting.
+Where AI excels: AI-generated logging is remarkably fast, syntactically correct, and immediately usable for simple request/response cycles. It applies standard Python idioms (module-level logger, `%`-formatting for lazy evaluation) without prompting.
 
-**Where human reasoning wins:** The human developer brought domain knowledge that the AI lacked — the distinction between retryable `5xx` errors and non-retryable `4xx` errors, the importance of masking authentication tokens in logs, and the need for unit tests that assert logging output.
+Where human reasoning wins: The human developer brought domain knowledge that the AI lacked — the distinction between retryable `5xx` errors and non-retryable `4xx` errors, the importance of masking authentication tokens in logs, and the need for unit tests that assert logging output.
 
-**Best practice — hybrid approach:** Use AI to generate the boilerplate logging scaffold quickly, then apply human review to add retry semantics, security constraints, and domain-specific context that the AI cannot reliably infer from syntax alone.
+Best practice — hybrid approach: Use AI to generate the boilerplate logging scaffold quickly, then apply human review to add retry semantics, security constraints, and domain-specific context that the AI cannot reliably infer from syntax alone.
 
-> **Key Takeaway:** AI-generated logging is an excellent starting point but should always be reviewed by a developer familiar with the system's failure modes, security requirements, and operational context. Neither approach alone is sufficient for production-grade observability.
+> Key Takeaway: AI-generated logging is an excellent starting point but should always be reviewed by a developer familiar with the system's failure modes, security requirements, and operational context. Neither approach alone is sufficient for production-grade observability.
 
 
 ## 6. Conclusion
 
-This assignment demonstrated a systematic approach to improving error handling and logging in open-source Python code using the `requests` library as a case study. The four tasks were completed as follows:
+This  demonstrated a systematic approach to improving error handling and logging in open-source Python code using the `requests` library as a case study. The four tasks were completed as follows:
 
-- **Analysis:** Five anti-patterns were identified — bare `except`, over-broad `Exception` catching, silent returns, missing `raise...from` chains, and context-free error messages.
-- **Improvements:** Each anti-pattern was replaced with a targeted fix: specific exception types from `requests.exceptions`, a project-level hierarchy, and contextual exception chaining.
-- **Logging:** A complete logging scaffold was added using Python's `logging` module with `DEBUG`/`INFO`/`WARNING`/`ERROR` levels, structured `key=value` context, and `exc_info=True` for full tracebacks.
-- **AI vs Human comparison:** AI suggestions are fast and syntactically sound; human reasoning adds retry logic, security awareness, and test coverage that AI cannot reliably infer.
+-Analysis: Five anti-patterns were identified — bare `except`, over-broad `Exception` catching, silent returns, missing `raise...from` chains, and context-free error messages.
+- Improvements: Each anti-pattern was replaced with a targeted fix: specific exception types from `requests.exceptions`, a project-level hierarchy, and contextual exception chaining.
+- Logging: A complete logging scaffold was added using Python's `logging` module with `DEBUG`/`INFO`/`WARNING`/`ERROR` levels, structured `key=value` context, and `exc_info=True` for full tracebacks.
+- AI vs Human comparison: AI suggestions are fast and syntactically sound; human reasoning adds retry logic, security awareness, and test coverage that AI cannot reliably infer.
 
 The overarching lesson is that good error handling and logging are not afterthoughts — they are first-class design decisions that directly determine how quickly a team can diagnose and recover from production failures.
